@@ -1,19 +1,27 @@
-import { Component,Input, OnInit } from '@angular/core';
-import { TodoItem } from '../todo-item';
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { TodoItem } from "../todo-item";
 
 @Component({
-  selector: 'app-todo-item',
+  selector: "app-todo-item",
   template: `
-    {{ item.title }}
+    <div class="todo-item">
+      {{ item.title }}
+
+      <button class="btn btn-red" (click)="removeItem()">
+        remove
+      </button>
+    </div>
   `,
-  styleUrls: ['./todo-item.component.css']
+  styleUrls: ["./todo-item.component.css"]
 })
 export class TodoItemComponent implements OnInit {
   @Input() item;
+  @Output() remove: EventEmitter<TodoItem> = new EventEmitter();
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  removeItem() {
+    this.remove.emit(this.item);
   }
-
 }
