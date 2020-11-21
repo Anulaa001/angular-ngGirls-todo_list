@@ -26,7 +26,7 @@ ul {
 }
 
 .btn {
-  background: lightseagreen;
+  background: lightblue;
   color: #fff;
   padding: 3px 10px;
   margin: 0 0 0 3px;
@@ -39,7 +39,7 @@ ul {
 }
 
 .btn:hover {
-  background: lightslategrey;
+  background: rgb(102, 167, 231);
 }
 
 .btn-red {
